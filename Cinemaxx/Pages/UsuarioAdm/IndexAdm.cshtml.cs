@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Cinemaxx.Pages.Usuario
-{
-    //public List<> listUsuario = new List<UsuarioInfo>();
-    public class IndexModel : PageModel
+namespace Cinemaxx.Pages.UsuarioAdm
+
+{//public List<> listUsuarioAdm = new List<UsuarioAdm>();
+    public class IndexAdmModel : PageModel
     {
         public void OnGet()
         {
@@ -34,7 +34,7 @@ namespace Cinemaxx.Pages.Usuario
             //}
         }
 
-        public class UsuarioInfo
+        public class UsuarioIAdm
         {
             public string id;
             public string nome;

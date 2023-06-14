@@ -18,8 +18,9 @@ namespace Cinemaxx.Pages.Usuario
             //usuarioInfo.nome = Request.Form["nome"];
             //usuarioInfo.email = Request.Form["email"];
             //usuarioInfo.senha = Request.Form["senha"];
+            //usuarioInfo.confirmarSenha = Request.Form["confirmarSenha"];
 
-            //if(Usuario.nome.Length == 0 || Usuario.email.Length == 0 || Usuario.senha.Length == 0 ||)
+            //if(Usuario.nome.Length == 0 || Usuario.email.Length == 0 || Usuario.senha.Length == 0 || Usuario.confirmarSenha.Length == 0)
             //{
             //    errorMessage = "Todos os campos devem ser preenchidos";
             //    return;
@@ -45,7 +46,7 @@ namespace Cinemaxx.Pages.Usuario
             //    return
             //}
 
-            // usuarioInfo.nome = " "; usuarioInfo.email = " "; usuarioInfo.senha = " ";
+            // usuarioInfo.nome = " "; usuarioInfo.email = " "; usuarioInfo.senha = " "; usuarioInfo.confirmarSenha = " ";
             //successMessage = "Cadastro realizado com sucesso";
 
             Response.Redirect("/Usuario/Index");

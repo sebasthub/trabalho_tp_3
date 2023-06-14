@@ -1,10 +1,10 @@
 ﻿@page
-@model Cinemaxx.Pages.Usuario.IndexModel
+@model Cinemaxx.Pages.UsuarioAdm.IndexAdmModel
 @{
 }
 
 <br>
-<h2> Cadastro</h2>
+<h2> Cadastro Administrador</h2>
 <table class="table">
 	<thead>
 		<tr>
@@ -18,18 +18,17 @@
 	<tbody>
 		@*@foreach (var item in Model.listUsuario)
 		{
-			 <tr>
+			<tr>
 				<td>@item.id</td>
 				<td>@item.nome/td>
 				<td>@item.email</td>
 				<td>@item.senha</td>
 				<td>@item.Confirmarsenha</td>*@
-				<td>
-					<a class='bnt bntalert-primary bnt-sm' href="/Usuario/Edid?id=@*item.id*@">Editar</a>
-					<a class='bnt bntalert-primary bnt-sm' href="/Usuario/Delete?id=@*item.id*@">Deletar</a>
-				</td>
-			 </tr>
-		 }
+			<td>
+			<a class='bnt bntalert-primary bnt-sm' href="/UsuarioAdm/Edid?id=@*item.id*@">Editar</a>
+			<a class='bnt bntalert-primary bnt-sm' href="/UsuarioAdm/Delete?id=@*item.id*@">Deletar</a>
+			</td>
+		</tr>
+		}
 	</tbody>
 </table>
-

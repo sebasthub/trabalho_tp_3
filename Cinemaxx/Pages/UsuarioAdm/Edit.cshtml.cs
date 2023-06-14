@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Cinemaxx.Pages.Usuario
+namespace Cinemaxx.Pages.UsuarioAdm
 {
     public class EditModel : PageModel
     {
-        //public UsuarioInfo usuarioInfo = new UsuarioInfo();
+        //public UsuarioAdm usuarioAdm = new UsuarioAdm();
         public String errorMessage = " ";
         public String successMessage = " ";
         public void OnGet()
@@ -25,12 +25,12 @@ namespace Cinemaxx.Pages.Usuario
 
         public void OnPost()
         {
-            //usuarioInfo.nome = Request.Form["nome"];
-            //usuarioInfo.email = Request.Form["email"];
-            //usuarioInfo.senha = Request.Form["senha"];
-            //usuarioInfo.confirmarSenha = Request.Form["confirmarSenha"];
+            //usuarioAdm.nome = Request.Form["nome"];
+            //usuarioAdm.email = Request.Form["email"];
+            //usuarioAdm.senha = Request.Form["senha"];
+            //usuarioAdm.confirmarSenha = Request.Form["confirmarSenha"];
 
-            //if(Usuario.nome.Length == 0 || Usuario.email.Length == 0 || Usuario.senha.Length == 0 || Usuario.confirmarSenha.Length == 0)
+            //if(UsuarioAdm.nome.Length == 0 || UsuarioAdm.email.Length == 0 || UsuarioAdm.senha.Length == 0 || UsuarioAdm.confirmarSenha.Length == 0)
             //{
             //    errorMessage = "Todos os campos devem ser preenchidos";
             //    return;
@@ -56,7 +56,7 @@ namespace Cinemaxx.Pages.Usuario
             //    return
             //}
 
-            Response.Redirect("/Usuario/Index");
+            Response.Redirect("/UsuarioAdm/Index");
         }
     }
 }
