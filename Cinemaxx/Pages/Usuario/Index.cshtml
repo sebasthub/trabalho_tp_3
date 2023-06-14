@@ -2,7 +2,9 @@
 @model Cinemaxx.Pages.Usuario.IndexModel
 @{
 }
-
+<li class="nav-item">
+	<a class='btn btn-primary btn-sm' class="nav-link text-dark" asp-area="" asp-page="/Ingresso/IndexAdm">Comprar Ingressos</a>
+</li>
 <br>
 <h2> Cadastro</h2>
 <table class="table">
@@ -25,11 +27,11 @@
 				<td>@item.senha</td>
 				<td>@item.Confirmarsenha</td>*@
 				<td>
-					<a class='bnt bntalert-primary bnt-sm' href="/Usuario/Edid?id=@*item.id*@">Editar</a>
-					<a class='bnt bntalert-primary bnt-sm' href="/Usuario/Delete?id=@*item.id*@">Deletar</a>
+					<a class='btn btn-primary btn-sm' href="/Usuario/Edid?id=@*item.id*@">Editar</a>
+					<a class='btn btn-danger btn-sm' href="/Usuario/Delete?id=@*item.id*@">Deletar</a>
 				</td>
-			 </tr>
-		 }
+			@* </tr>
+			//}*@
 	</tbody>
 </table>
 
