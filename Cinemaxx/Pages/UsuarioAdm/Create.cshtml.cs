@@ -49,7 +49,7 @@ namespace Cinemaxx.Pages.UsuarioAdm
             // usuarioAdm.nome = " "; usuarioAdm.email = " "; usuarioAdm.senha = " "; usuarioAdm.confirmarSenha = " ";
             //successMessage = "Cadastro realizado com sucesso";
 
-            Response.Redirect("/UsuarioAdm/Index");
+            Response.Redirect("/UsuarioAdm/IndexAdm");
         }
     }
 }

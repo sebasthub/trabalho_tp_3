@@ -2,9 +2,26 @@
 @model Cinemaxx.Pages.UsuarioAdm.IndexAdmModel
 @{
 }
+<header>
+	<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+		<div class="container">
+			<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+				<ul class="navbar-nav flex-grow-1">
+					<li class="nav-item">
+						<a class="nav-link text-dark" asp-area="" asp-page="/Relatorios/Index">Relatorio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link text-dark" asp-area="" asp-page="/Programacao/Index">Programação</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
 
 <br>
 <h2> Cadastro Administrador</h2>
+<a class='btn btn-primary btn-sm' href="/UsuarioAdm/Create" role="button">Cadastrar Novo Administrador</a>
 <table class="table">
 	<thead>
 		<tr>
@@ -24,11 +41,11 @@
 				<td>@item.email</td>
 				<td>@item.senha</td>
 				<td>@item.Confirmarsenha</td>*@
-			<td>
-			<a class='bnt bntalert-primary bnt-sm' href="/UsuarioAdm/Edid?id=@*item.id*@">Editar</a>
-			<a class='bnt bntalert-primary bnt-sm' href="/UsuarioAdm/Delete?id=@*item.id*@">Deletar</a>
-			</td>
-		</tr>
-		}
+		<td>
+			<a class='btn btn-primary btn-sm' href="/Usuario/Edid?id=@*item.id*@">Editar</a>
+			<a class='btn btn-danger btn-sm' href="/Usuario/Delete?id=@*item.id*@">Deletar</a>
+		</td>
+		@* </tr>
+	  //}*@
 	</tbody>
 </table>

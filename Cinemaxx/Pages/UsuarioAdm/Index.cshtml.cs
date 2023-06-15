@@ -1,16 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Cinemaxx.Pages
+namespace Cinemaxx.Pages.UsuarioAdm
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
         //public UsuarioInfo usuarioInfo = new UsuarioInfo();
         public String errorMessage = " ";
         public String successMessage = " ";
@@ -23,7 +17,7 @@ namespace Cinemaxx.Pages
             //usuarioInfo.nome = Request.Form["nome"];
             //usuarioInfo.email = Request.Form["email"];
             //usuarioInfo.senha = Request.Form["senha"];
-     
+
 
             //if(Usuario.nome.Length == 0 || Usuario.email.Length == 0 || Usuario.senha.Length == 0 )
             //{
@@ -54,7 +48,7 @@ namespace Cinemaxx.Pages
             // usuarioInfo.nome = " "; usuarioInfo.email = " "; usuarioInfo.senha = " "; 
             //successMessage = "Cadastro realizado com sucesso";
 
-            Response.Redirect("/Usuario/Index");
+            Response.Redirect("/UsuarioAdm/IndexAdm");
         }
     }
 }
