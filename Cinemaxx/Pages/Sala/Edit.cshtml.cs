@@ -1,10 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using static Cinemaxx.Pages.Sala.IndexModel;
 
 namespace Cinemaxx.Pages.Sala
 {
-    public class CreateModel : PageModel
+    public class EditModel : PageModel
     {
         //public Sala sala = new Sala();
         public String errorMessage = " ";
@@ -37,8 +36,7 @@ namespace Cinemaxx.Pages.Sala
             //    using (SqlConnection connection = new SqlConnection Connection(connectionString))
             //    {
             //        connection.Open();
-            //        String sql = "INSERT INTO sala " + " VALEUS " + ";" ;
-
+            //        String sql = "UPDATE sala " + " SET " + "WHERE"
             //        using(SqlCommand commad = new SqlCommand(sql, connection))
             //        {
 
@@ -53,7 +51,7 @@ namespace Cinemaxx.Pages.Sala
 
             // sala.numeroSala = " "; usala.quantidadeCadeira = " "; sala.tipoSala = " "; sala.horario = " ";
             // sala.disponibilidade = " "; sala.fileira = " "; sala.numeroCadeira = " "; sala.vagaPne = " ";
-            //successMessage = "Cadastro realizado com sucesso";
+            //successMessage = "Sala Editada com sucesso";
 
             Response.Redirect("/Sala/Index");
         }
