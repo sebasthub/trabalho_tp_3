@@ -1,0 +1,42 @@
+﻿@page
+@model Cinemaxx.Pages.Sala.IndexModel
+@{
+}
+<br>
+<h2> Cadastro de Sala</h2>
+<a class='btn btn-primary btn-sm' href="/Sala/Create" role="button">Cadastrar Nova Sala</a>
+<table class="table">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Numero da Sala</th>
+			<th>Quantidade de Cadeiras</th>
+			<th>Tipo de Sala</th>
+			<th>Horario</th>
+			<th>Disponibilidade</th>
+			<th>Fileira</th>
+			<th>Numero das Cadeiras</th>
+			<th>Vagas PNE</th>
+		</tr>
+	</thead>
+	<tbody>
+		@*@foreach (var item in Model.listSala)
+		{
+		<tr>
+		<td>@item.id</td>
+		<td>@item.numeroSala/td>
+		<td>@item.quantidadeCadeiras</td>
+		<td>@item.tipoSala</td>
+		<td>@item.horario</td>
+		<td>@item.disponibilidade</td>
+		<td>@item.fileira</td>
+		<td>@item.numeroCadeiras</td>
+		<td>@item.vagaPne</td>*@
+	<td>
+		<a class='btn btn-primary btn-sm' href="/Sala/Edid?id=@*item.id*@">Editar</a>
+		<a class='btn btn-danger btn-sm' href="/Sala/Delete?id=@*item.id*@">Deletar</a>
+	</td>
+		@* </tr>
+	//}*@
+	</tbody>
+</table>
