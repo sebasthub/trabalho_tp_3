@@ -1,0 +1,50 @@
+﻿@model Cinemaxx.ingresso
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ingresso</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fileira1.indentificador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fileira1.indentificador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.programacao1.id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.programacao1.id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuario1.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuario1.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cadeira)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cadeira)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Cinemaxx.ingresso>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fileira1.indentificador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.programacao1.id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usuario1.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cadeira)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fileira1.indentificador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.programacao1.id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuario1.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cadeira)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
