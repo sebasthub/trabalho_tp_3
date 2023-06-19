@@ -57,6 +57,7 @@ namespace Cinemaxx.Pages.Sala
             //successMessage = "Cadastro realizado com sucesso";
 
             Response.Redirect("/Sala/Index");
+
         }
     }
 }
