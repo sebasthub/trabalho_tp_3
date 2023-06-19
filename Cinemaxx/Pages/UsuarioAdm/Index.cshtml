@@ -4,38 +4,38 @@
 }
 <div class="text-center">
 
-	@*@if (Model.errorMessage.Length > 0)
+	@if (Model.errorMessage.Length > 0)
 	{
 	<div class='alert alert-warning alert-dismissible fade show' role='alert'>
 	<strong>@Model.errorMessage</strong>
 	<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Fechar'></button>
 	</div>
-	}*@
+	}
 
 	<form method="POST">
 		<h1 class="display-30">Login Administrador</h1>
 		<div class="row mb-3">
 			<label class="col-sm-3 col-form-label">Nome</label>
 			<div class="col-sm-6">
-				<input type="text" class="form-control" name="nome" value="@*@Model.usuarioAdm.nome*@">
+				<input type="text" class="form-control" name="nome" value="@Model.usuarioAdm.nome">
 			</div>
 		</div>
 
 		<div class="row mb-3">
 			<label class="col-sm-3 col-form-label">Email</label>
 			<div class="col-sm-6">
-				<input type="text" class="form-control" name="email" value="@*@Model.usuarioAdm.email*@">
+				<input type="text" class="form-control" name="email" value="@Model.usuarioAdm.email">
 			</div>
 		</div>
 
 		<div class="row mb-3">
 			<label class="col-sm-3 col-form-label">Senha</label>
 			<div class="col-sm-6">
-				<input type="text" class="form-control" name="senha" value="">
+				<input type="text" class="form-control" name="senha" value="@Model.usuarioAdm.email">
 			</div>
 		</div>
 
-		@*@if (Model.successMessage.Length > 0)
+		@if (Model.successMessage.Length > 0)
 		{
 		<div class="row mb-3">
 		<div class="col-sm-9">
@@ -45,7 +45,7 @@
 		</div>
 		</div>
 		</div>
-		}*@
+		}
 
 		<div class="row mb-3">
 			<div class="offset-sm-3 col-sm-3 d-grid">

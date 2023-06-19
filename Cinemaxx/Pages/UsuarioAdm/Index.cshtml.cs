@@ -1,11 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Data.SqlClient;
+using static Cinemaxx.Pages.Usuario.IndexModel;
 
 namespace Cinemaxx.Pages.UsuarioAdm
 {
     public class IndexModel : PageModel
     {
-        //public UsuarioInfo usuarioInfo = new UsuarioInfo();
+        public UsuarioAdm usuarioAdm = new UsuarioAdm();
         public String errorMessage = " ";
         public String successMessage = " ";
         public void OnGet()
@@ -14,39 +16,47 @@ namespace Cinemaxx.Pages.UsuarioAdm
 
         public void OnPost()
         {
-            //usuarioInfo.nome = Request.Form["nome"];
-            //usuarioInfo.email = Request.Form["email"];
-            //usuarioInfo.senha = Request.Form["senha"];
+            usuarioAdm.nome = Request.Form["nome"];
+            usuarioAdm.email = Request.Form["email"];
+            usuarioAdm.senha = Request.Form["senha"];
 
 
-            //if(Usuario.nome.Length == 0 || Usuario.email.Length == 0 || Usuario.senha.Length == 0 )
-            //{
-            //    errorMessage = "Todos os campos devem ser preenchidos";
-            //    return;
-            //}
+            if (usuarioAdm.nome.Length == 0 || usuarioAdm.email.Length == 0 ||
+                usuarioAdm.senha.Length == 0)
+            {
+                errorMessage = "Todos os campos devem ser preenchidos";
+                return;
+            }
 
-            //try
-            //{
-            //    String connectionString = " ";
-            //    using (SqlConnection connection = new SqlConnection Connection(connectionString))
-            //    {
-            //        connection.Open();
-            //        String sql = "INSERT INTO usuario " + " VALEUS " + ";" ;
+            try
+            {
+                String connectionString = " ";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    String sql = "INSERT INTO UsuarioAdm " +
+                                 "(nome, email, senha,) VALEUS " +
+                                 "(@nome, @email, @senha,;";
 
-            //        using(SqlCommand commad = new SqlCommand(sql, connection))
-            //        {
+                    using (SqlCommand commad = new SqlCommand(sql, connection))
+                    {
+                        commad.Parameters.AddWithValue("@nome", usuarioAdm.nome);
+                        commad.Parameters.AddWithValue("@email", usuarioAdm.email);
+                        commad.Parameters.AddWithValue("@senha", usuarioAdm.senha);
+                        
 
-            //        }
-            //    }
-            //}
-            //catch
-            //{
-            //    errorMessage = ex.Message;
-            //    return
-            //}
+                        commad.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                errorMessage = ex.Message;
+                return;
+            }
 
-            // usuarioInfo.nome = " "; usuarioInfo.email = " "; usuarioInfo.senha = " "; 
-            //successMessage = "Cadastro realizado com sucesso";
+            usuarioAdm.nome = " "; usuarioAdm.email = " "; usuarioAdm.senha = " ";
+            successMessage = "Cadastro realizado com sucesso";
 
             Response.Redirect("/UsuarioAdm/IndexAdm");
         }

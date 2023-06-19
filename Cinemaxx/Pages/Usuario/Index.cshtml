@@ -18,20 +18,20 @@
 		</tr>
 	</thead>
 	<tbody>
-		@*@foreach (var item in Model.listUsuario)
+		@foreach (var item in Model.listUsuarioInfo)
 		{
 			 <tr>
 				<td>@item.id</td>
 				<td>@item.nome/td>
 				<td>@item.email</td>
 				<td>@item.senha</td>
-				<td>@item.Confirmarsenha</td>*@
+				<td>@item.confirmarSenha</td>
 				<td>
 					<a class='btn btn-primary btn-sm' href="/Usuario/Edid?id=@*item.id*@">Editar</a>
 					<a class='btn btn-danger btn-sm' href="/Usuario/Delete?id=@*item.id*@">Deletar</a>
 				</td>
-			@* </tr>
-			//}*@
+			 </tr>
+			}
 	</tbody>
 </table>
 

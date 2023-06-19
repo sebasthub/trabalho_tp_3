@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using static Cinemaxx.Pages.Sala.IndexModel;
+using System.Data.SqlClient;
 
 namespace Cinemaxx.Pages.Sala
 {
@@ -24,8 +25,8 @@ namespace Cinemaxx.Pages.Sala
             //sala.numeroCadeira = Request.Form["numeroCadeira"];
             //sala.vagaPne = Request.Form["vagaPne"];
 
-            //if(Sala.numeroSala.Length == 0 || Sala.quantidadeCadeira.Length == 0 || Sala.tipoSala.Length == 0 || Sala.horario.Length == 0
-            // || Sala.disponibilidade.Length == 0 || Sala.fileira.Length == 0 || Sala.numeroCadeira.Length == 0 || Sala.vagaPne.Length == 0)
+            //if (sala.numeroSala.Length == 0 || sala.quantidadeCadeira.Length == 0 || sala.tipoSala.Length == 0 || sala.horario.Length == 0
+            // || sala.disponibilidade.Length == 0 || sala.fileira.Length == 0 || sala.numeroCadeira.Length == 0 || sala.vagaPne.Length == 0)
             //{
             //    errorMessage = "Todos os campos devem ser preenchidos";
             //    return;
@@ -33,26 +34,26 @@ namespace Cinemaxx.Pages.Sala
 
             //try
             //{
-            //    String connectionString = " ";
-            //    using (SqlConnection connection = new SqlConnection Connection(connectionString))
+            //    String connectionString = "Data Source=LAPTOP-R7T019C0\\\\MSQLBEATRIZ;Initial Catalog=topicos;Integrated Security=True\"";
+            //    using (SqlConnection connection = new SqlConnection(connectionString))
             //    {
             //        connection.Open();
-            //        String sql = "INSERT INTO sala " + " VALEUS " + ";" ;
+            //        String sql = "INSERT INTO sala " + " VALEUS " + ";";
 
-            //        using(SqlCommand commad = new SqlCommand(sql, connection))
+            //        using (SqlCommand commad = new SqlCommand(sql, connection))
             //        {
 
             //        }
             //    }
             //}
-            //catch
+            //catch (Exception ex)
             //{
             //    errorMessage = ex.Message;
-            //    return
+            //    return;
             //}
 
-            // sala.numeroSala = " "; usala.quantidadeCadeira = " "; sala.tipoSala = " "; sala.horario = " ";
-            // sala.disponibilidade = " "; sala.fileira = " "; sala.numeroCadeira = " "; sala.vagaPne = " ";
+            //sala.numeroSala = " "; sala.quantidadeCadeira = " "; sala.tipoSala = " "; sala.horario = " ";
+            //sala.disponibilidade = " "; sala.fileira = " "; sala.numeroCadeira = " "; sala.vagaPne = " ";
             //successMessage = "Cadastro realizado com sucesso";
 
             Response.Redirect("/Sala/Index");

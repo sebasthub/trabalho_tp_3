@@ -1,29 +1,31 @@
 ﻿@page
-@*@using System.Data.SqlUsuario;*@
+@using System.Data.SqlClient;
 
 @{
-	 //try
-            //{
-            //    String connectionString = " ";
-            //    using (SqlConnection connection = new SqlConnection Connection(connectionString))
-            //    {
-            //        connection.Open();
-            //        String sql = "DELETE FROM usuario WHERE id@id" ;
+	try
+	{
+		String id = Request.Query["id"];
 
-            //        using(SqlCommand commad = new SqlCommand(sql, connection))
-            //        {
+		string connectionString = "Data Source = LAPTOP - R7T019C0\\\\MSQLBEATRIZ; Initial Catalog = topicos; Integrated Security = True\"";
+		using (SqlConnection connection = new SqlConnection(connectionString))
+		{
+			connection.Open();
+			String sql = "DELETE FROM UsuarioAdm WHERE id@id";
 
-            //        }
-            //    }
-            //}
-            //catch
-            //{
-            //    errorMessage = ex.Message;
-            //    return
-            //}
+			using (SqlCommand commad = new SqlCommand(sql, connection))
+			{
+				commad.Parameters.AddWithValue("@id", id);
 
-              // usuarioAdm.nome = " "; usuarioAdm.email = " "; usuarioAdm.senha = " "; usuarioAdm.confirmarSenha = " ";
-             //successMessage = "Cadastro realizado com sucesso";
+				commad.ExecuteNonQuery();
+			}
+		}
+	}
 
-            Response.Redirect("/UsuarioAdm/Index");
+	catch (Exception ex)
+	{
+	
+
+	}
+
+	Response.Redirect("/UsuarioAdm/Index");
 }

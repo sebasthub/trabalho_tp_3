@@ -18,27 +18,27 @@
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Nome</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="nome" value="@*@Model.usuarioInfo.nome*@">
+			<input type="text" class="form-control" name="nome" value="@Model.usuarioInfo.nome">
 		</div>
 	</div>
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Email</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="email" value="@*@Model.usuarioInfo.email*@">
+			<input type="text" class="form-control" name="email" value="@Model.usuarioInfo.email">
 		</div>
 	</div>
 
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Senha</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="senha" value="">
+			<input type="text" class="form-control" name="senha" value="@Model.usuarioInfo.senha">
 		</div>
 	</div>
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Confirmar Senha</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="confirmarSenha" value="">
+			<input type="text" class="form-control" name="confirmarSenha" value="@Model.usuarioInfo.confirmarSenha">
 		</div>
 	</div>
 

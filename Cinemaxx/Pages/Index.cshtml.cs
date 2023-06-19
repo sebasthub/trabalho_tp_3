@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Cinemaxx.Pages.Usuario;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Data.SqlClient;
 
 namespace Cinemaxx.Pages
 {
@@ -11,7 +13,7 @@ namespace Cinemaxx.Pages
         {
             _logger = logger;
         }
-        //public UsuarioInfo usuarioInfo = new UsuarioInfo();
+        public UsuarioInfo usuarioInfo = new UsuarioInfo();
         public String errorMessage = " ";
         public String successMessage = " ";
         public void OnGet()
@@ -20,39 +22,47 @@ namespace Cinemaxx.Pages
 
         public void OnPost()
         {
-            //usuarioInfo.nome = Request.Form["nome"];
-            //usuarioInfo.email = Request.Form["email"];
-            //usuarioInfo.senha = Request.Form["senha"];
-     
+            usuarioInfo.nome = Request.Form["nome"];
+            usuarioInfo.email = Request.Form["email"];
+            usuarioInfo.senha = Request.Form["senha"];
 
-            //if(Usuario.nome.Length == 0 || Usuario.email.Length == 0 || Usuario.senha.Length == 0 )
-            //{
-            //    errorMessage = "Todos os campos devem ser preenchidos";
-            //    return;
-            //}
 
-            //try
-            //{
-            //    String connectionString = " ";
-            //    using (SqlConnection connection = new SqlConnection Connection(connectionString))
-            //    {
-            //        connection.Open();
-            //        String sql = "INSERT INTO usuario " + " VALEUS " + ";" ;
+            if (usuarioInfo.nome.Length == 0 || usuarioInfo.email.Length == 0 ||
+                usuarioInfo.senha.Length == 0)
+            {
+                errorMessage = "Todos os campos devem ser preenchidos";
+                return;
+            }
 
-            //        using(SqlCommand commad = new SqlCommand(sql, connection))
-            //        {
+            try
+            {
+                String connectionString = " ";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    String sql = "INSERT INTO UsuarioAdm " +
+                                 "(nome, email, senha,) VALEUS " +
+                                 "(@nome, @email, @senha,;";
 
-            //        }
-            //    }
-            //}
-            //catch
-            //{
-            //    errorMessage = ex.Message;
-            //    return
-            //}
+                    using (SqlCommand commad = new SqlCommand(sql, connection))
+                    {
+                        commad.Parameters.AddWithValue("@nome", usuarioInfo.nome);
+                        commad.Parameters.AddWithValue("@email", usuarioInfo.email);
+                        commad.Parameters.AddWithValue("@senha", usuarioInfo.senha);
 
-            // usuarioInfo.nome = " "; usuarioInfo.email = " "; usuarioInfo.senha = " "; 
-            //successMessage = "Cadastro realizado com sucesso";
+
+                        commad.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                errorMessage = ex.Message;
+                return;
+            }
+
+            usuarioInfo.nome = " "; usuarioInfo.email = " "; usuarioInfo.senha = " ";
+            successMessage = "Cadastro realizado com sucesso";
 
             Response.Redirect("/Usuario/Index");
         }
